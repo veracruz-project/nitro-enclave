@@ -8,4 +8,4 @@ edition = "2021"
 [dependencies]
 anyhow = "1"
 byteorder = { version = "1.4.3" }
-nix = { version = "0.20.2" }
+nix = { version = "0.26" }

@@ -8,7 +8,7 @@ edition = "2021"
 [dependencies]
 anyhow = "1"
 err-derive = "0.2"
-nix = { version = "0.20.2" }
+nix = { version = "0.26" }
 raw-fd = { path = "../raw-fd" }
 serde_json = { version = "1.0", default-features = false }
 
