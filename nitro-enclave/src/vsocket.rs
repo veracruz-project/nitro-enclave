@@ -15,7 +15,7 @@ use nix::{
     sys::socket::{
         connect, setsockopt, shutdown, socket,
         sockopt::{ReuseAddr, ReusePort},
-        AddressFamily, Shutdown, SockAddr, SockFlag, SockType,
+        AddressFamily, Shutdown, VsockAddr, SockFlag, SockType,
     },
     unistd::close,
 };
@@ -56,9 +56,9 @@ impl VsockSocket {
     where
         T: Into<u32>,
     {
-        let sockaddr = SockAddr::new_vsock(cid.into(), port.into());
+        let sockaddr = VsockAddr::new(cid.into(), port.into());
         // Just a placeholder!
-        let mut err: nix::Error = nix::Error::UnsupportedOperation;
+        let mut err: nix::Error = nix::errno::Errno::EOPNOTSUPP;
 
         for i in 0..MAX_CONNECTION_ATTEMPTS {
             let vsocket = VsockSocket::new(socket(
