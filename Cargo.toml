@@ -2,4 +2,5 @@
 members = [
 	"nitro-enclave",
 	"raw-fd",
+	"vsocket",
 ]
