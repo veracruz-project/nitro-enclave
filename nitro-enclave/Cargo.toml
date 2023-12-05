@@ -9,4 +9,5 @@ err-derive = "0.2"
 nix = { version = "0.26" }
 raw-fd = { path = "../raw-fd" }
 serde_json = { version = "1.0", default-features = false }
+vsocket = { path = "../vsocket" }
 
